@@ -33,8 +33,8 @@
 
         nav a {
             text-decoration: none;
-            color: black;
-            padding: 10px;
+            /* color: black; */
+            padding: 0 10px;
         }
 
         main {
@@ -43,11 +43,9 @@
 
         img {
             /* TODO 2: Set the image width so that the 3 images fit in 1 row and fills the browser width */
-            width: 100%;
-            height: auto; /* Maintain aspect ratio */
-            display: block; /* Remove default inline behavior */
-            margin-bottom: 10px; /* Add space between images */
+            width: 33.3%;
         }
+        
         img:hover {
             transform: scale(1.1); /* Enlarges the image on hover */
             transition: transform 0.3s ease; /* Adding a smooth transition effect */
@@ -55,6 +53,9 @@
 
         /* TODO 3: Add CSS media queries for smaller screens */
         @media only screen and (max-width: 768px) {
+            html,body{
+                width: 100%;
+            }
             h1{
                 float: none;
             }
