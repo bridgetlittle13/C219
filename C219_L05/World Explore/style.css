@@ -78,6 +78,13 @@ body {
 .box-container {
     text-align: center;
 }
+/* img{
+    width: 50%;
+} */
+.article-image {
+    max-width: 100%;
+    height: auto;
+}
 .article-image:hover {
     transform: scale(1.1); /* Enlarges the image on hover */
     transition: transform 0.3s ease; /* Adding a smooth transition effect */

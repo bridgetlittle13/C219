@@ -2,6 +2,65 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .hamburger {
+            display: none; /* Hide the button by default */
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .dropdown-content a {
+            color:black;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block; /* Show the button for small screens */
+            }
+
+            .menu-items {
+                flex-direction: column;
+                position: static; /* Remove absolute positioning for smaller screens */
+                display: none; /* Hide the menu items by default */
+                width: 100%;
+                background-color: black;
+                padding: 10px;
+            }
+
+            .menu-items.show {
+                display: flex;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch; /* Stretch items vertically */
+            }
+
+            .dropdown-content {
+                text-align: left; /* Adjust text alignment for dropdown */
+            }
+
+}
+
+    </style>
 </head>
 <body style="background-color: antiquewhite;">
     <nav class="navbar">
@@ -11,10 +70,11 @@
         <div style="margin-right: 200px;padding: 10px;">
             <h1>World Explore</h1>
         </div>
-        <ul class="menu-items" style="margin-right: 90px;">
+        <button class="hamburger">&#9776;</button>
+        <ul class="menu-items"  >
             <li><a href="index.html">Home</a></li>
            
-            <li class="dropdown">
+            <li class="dropdown show">
                 <button class="dropbtn" style="font-weight: bold;">Package Tours</button>
                 <div class="dropdown-content">
                     <a href="promtions.html">Promotions</a>
@@ -78,5 +138,21 @@
     <footer class="site-footer">
         <p>©2023 world explore Powered by Visual Studio Code.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var hamburgerButton = document.querySelector('.hamburger');
+            var menuItems = document.querySelector('.menu-items');
+    
+            hamburgerButton.addEventListener('click', function () {
+                menuItems.classList.toggle('show');
+            });
+            var packageTours = document.querySelector('.dropdown');
+
+            packageTours.addEventListener('click', function () {
+                packageTours.classList.toggle('show');
+            });
+        });
+    </script>
 </body>
 </html>
+        
