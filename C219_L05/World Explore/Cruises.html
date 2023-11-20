@@ -33,6 +33,17 @@
         .cruises-container {
             margin-bottom: 100px; /* Adjust as needed */
         }
+        .grayscale-image {
+        width: 100%;
+        height: auto;
+        filter: grayscale(100%);
+        transition: filter 0.5s, transform 0.5s;
+        }
+
+        .cruise:hover .grayscale-image {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
         .site-footer {
             background-color: lightblue; /* Choose a suitable background color */
             color: white; /* Text color */
@@ -79,6 +90,7 @@
             img{
                 width: 100%; /* Stack the images in 1 column */
             }
+
             .site-footer {
                 /* position: fixed; */
                 bottom: 0;
@@ -119,7 +131,7 @@
 
         <div class="cruise-info" style="padding: 30px;">
             <div class="cruise">
-                <img src="pics and vids/spiceofsoutheastasia cruise.png" alt="Cruise 1">
+                <img class="grayscale-image" src="pics and vids/spiceofsoutheastasia cruise.png" alt="Cruise 1">
                 <h2>Spice of Southeast Asia Cruise</h2>
                 <h3><b>$634</b></h3>  
                 <p>The cruise will visit 4 places which is Singapore, Penang in malaysia, Phuket in Thailand and back to Singapore.</p>
@@ -128,7 +140,7 @@
             <br><br/>
 
             <div class="cruise">
-                <img src="pics and vids/sg to shanghai cruise.png" alt="Cruise 2">
+                <img class="grayscale-image" src="pics and vids/sg to shanghai cruise.png" alt="Cruise 2">
                 <h2>Singapore to Shanghai Cruise</h2>
                 <h3><b>$1003</b></h3>
                 <p>The cruise will visit Singapore, Nha Trang in Vietnam, Hong Kong in China and Shanghai (Baoshan) in China.</p>
@@ -137,7 +149,7 @@
             <br><br/>
 
             <div class="cruise">
-                <img src="pics and vids/Thailand & Vietnam Cruise.png" alt="Cruise 3">
+                <img class="grayscale-image" src="pics and vids/Thailand & Vietnam Cruise.png" alt="Cruise 3">
                 <h2>Thailand and Vietnam Cruise</h2>
                 <h3 style="margin-left: 0px;"><b>$1078</b></h3>
                 <p>The cruise will be visiting Singapore, Nha Trang in Vietnam, Ho Chi Minh City (Phu My) in Vietnam,Bangkok (Laemchabang), Thailand and back to Singapore.</p>

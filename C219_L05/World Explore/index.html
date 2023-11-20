@@ -30,10 +30,15 @@
             justify-content: space-between;
             align-items: center;
         }
-        .article-image:hover {
-            transform: scale(1.1); /* Enlarges the image on hover */
-            transition: transform 0.3s ease; /* Adding a smooth transition effect */
+        .article-image {
+            transform: scaleX(-1);
         }
+
+        .article-image:hover {
+            transform: scale(1.1) scaleX(-1); /* Enlarges the image on hover and flips it horizontally */
+            transition: transform 0.9s ease; /* Adding a smooth transition effect */
+        }
+
 
         @media only screen and (max-width: 768px) {
             .hamburger {
@@ -55,7 +60,7 @@
                 align-items: center; /* Center items horizontally */
             }
 
-            .menu-items li {
+             .menu-items li {
                 margin: 10px 0; /* Add margin between menu items */
                 text-align: center; /* Center text within each menu item */
             }
