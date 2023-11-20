@@ -3,6 +3,89 @@
 <head>
     <title>Cruises - World Explore</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .hamburger {
+            display: none; /* Hide the button by default */
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .dropdown-content a {
+            color:black;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+        .nav-container {
+            flex-direction: column;
+            align-items: stretch; /* Stretch items vertically */
+        }
+        .cruises-container {
+            margin-bottom: 100px; /* Adjust as needed */
+        }
+        .site-footer {
+            background-color: lightblue; /* Choose a suitable background color */
+            color: white; /* Text color */
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            /* position: fixed; */
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block; /* Show the button for small screens */
+            }
+
+            .menu-items {
+                flex-direction: column;
+                position: static; /* Remove absolute positioning for smaller screens */
+                display: none; /* Hide the menu items by default */
+                width: 100%;
+                background-color: black;
+                padding: 10px;
+            }
+
+            .menu-items.show {
+                display: flex;
+                flex-direction: column; /* Align items in a column */
+                align-items: center; /* Center items horizontally */
+            }
+            .menu-items li {
+                margin: 10px 0; /* Add margin between menu items */
+                text-align: center; /* Center text within each menu item */
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch; /* Stretch items vertically */
+            }
+
+            .dropdown-content {
+                text-align: center; /* Adjust text alignment for dropdown */
+            }
+            img{
+                width: 100%; /* Stack the images in 1 column */
+            }
+            .site-footer {
+                /* position: fixed; */
+                bottom: 0;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body style="background-color: antiquewhite;">
     <nav class="navbar">
@@ -12,6 +95,7 @@
         <div style="margin-right: 200px;padding: 10px;">
             <h1>World Explore</h1>
         </div>
+        <button class="hamburger">&#9776;</button>
         <ul class="menu-items" style="margin-right: 90px;">
             <li><a href="index.html">Home</a></li>
            
@@ -31,7 +115,7 @@
     </nav>
 
     <div class="cruises-container">
-        <h1 style="padding: 30px;">Explore Our Cruises</h1>
+        <h1 style="padding: 10px;text-align:center;">Explore Our Cruises</h1>
 
         <div class="cruise-info" style="padding: 30px;">
             <div class="cruise">
@@ -66,5 +150,16 @@
     <footer class="site-footer">
         <p>©2023 world explore Powered by Visual Studio Code.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerButton = document.querySelector('.hamburger');
+            const menuItems = document.querySelector('.menu-items'); // Change to select by class
+    
+            hamburgerButton.addEventListener('click', function () {
+                menuItems.classList.toggle('show');
+            });
+        });
+    </script>
+    
 </body>
 </html>

@@ -32,7 +32,7 @@ body {
 
 .menu-items a {
     text-decoration: none;
-    color: #fafafa;
+    color: black;
     font-weight: bold;
 }
 
@@ -160,7 +160,7 @@ input[type="submit"]:hover {
 .navbar a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: white;
     text-align: center;
     padding: 14px 20px;
     font-weight: bold;
