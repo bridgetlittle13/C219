@@ -52,10 +52,16 @@
             $('[data-bs-toggle="tooltip"]').tooltip();
 
             // TODO 2: Add toggle function
+            $(".btn-add").click(function () {
+            $(".square").toggle();
+            });
             
 
             // TODO 3: Clone square and append to grey box
-            
+            $(".btn-add").click(function () {
+            var clonedSquare = $(".square").clone();
+            $(".box").append(clonedSquare);
+        });
 
         });
     </script>

@@ -14,13 +14,31 @@
         <input id="name" type="text" placeholder="Name" value=""><br><br>
         <input id="email" type="email" placeholder="Email" value=""><br><br>
         <!-- Two radio buttons for Gender - Male and Female -->
+        <label>
+            <input type="radio" name="gender" value="male"> Male
+        </label>
+        <label>
+            <input type="radio" name="gender" value="female"> Female
+        </label><br><br>
         <!-- Submit button -->
+        <input type="button" value="Submit" onclick="displayFormData()">
     </form>
 
     <!-- Display form data -->
+    <div id="formData"></div>
 
     <script>
         // JavaScript to get and display form data
+        function displayFormData() {
+            // Get form data
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+
+            // Display form data
+            var formDataDisplay = document.getElementById('formData');
+            formDataDisplay.innerHTML = 'Name: ' + name + '<br>Email: ' + email + '<br>Gender: ' + (gender ? gender.value : 'Not specified');
+        }
     </script>
 </body>
 

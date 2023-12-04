@@ -14,13 +14,47 @@
         <input id="name" type="text" placeholder="Name" value=""><br><br>
         <input id="email" type="email" placeholder="Email" value=""><br><br>
         <!-- Two radio buttons for Gender - Male and Female -->
+        <label>
+            <input type="radio" name="gender" value="male"> Male
+        </label>
+        <label>
+            <input type="radio" name="gender" value="female"> Female
+        </label><br><br>
         <!-- Submit button -->
+        <input type="button" value="Submit" onclick="displayFormData()">
     </form>
 
     <!-- Display form data -->
+    <div id="formData"></div>
     <script src="js/jquery.min.js"></script>
     <script>
         // JavaScript to get and display form data
+        function displayFormData() {
+            // Get form data using jQuery
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var gender = $("input[name='gender']:checked").val();
+
+            // Display form data
+            var formDataDisplay = $("#formData");
+            formDataDisplay.html('Name: ' + name + '<br>Email: ' + email + '<br>Gender: ' + (gender ? gender : 'Not specified'));
+            // Apply CSS styles using jQuery
+            formDataDisplay.css({
+                'font-family': 'Arial',
+                'border': '1px solid #000',
+                'background-color': '#e0e0e0'
+            });
+
+            // Fade in the form data
+            formDataDisplay.fadeIn();
+
+            // Slide up the form data on mouseover
+            formDataDisplay.mouseover(function () {
+                $(this).slideUp();
+            });
+        }
+        
+
     </script>
 </body>
 
