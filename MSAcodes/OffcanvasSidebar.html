@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Responsive Offcanvas Card</title>
+  <style>
+      body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.offcanvas {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.offcanvas-content {
+  padding: 20px;
+}
+
+main {
+  padding: 20px;
+}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <button id="openNav">&#9776; Open</button>
+      <h1>Responsive Offcanvas Card</h1>
+    </header>
+
+    <div class="offcanvas" id="myOffcanvas">
+      <button id="closeNav">&times; Close</button>
+      <div class="offcanvas-content">
+        <h2>Card Content</h2>
+        <p>This is some content inside the offcanvas card.</p>
+      </div>
+    </div>
+
+    <main>
+      <p>Main content goes here.</p>
+    </main>
+  </div>
+
+    <script>
+        document.getElementById('openNav').addEventListener('click', function () {
+  document.getElementById('myOffcanvas').style.width = '250px';
+});
+
+document.getElementById('closeNav').addEventListener('click', function () {
+  document.getElementById('myOffcanvas').style.width = '0';
+});
+    </script>
+</body>
+</html>

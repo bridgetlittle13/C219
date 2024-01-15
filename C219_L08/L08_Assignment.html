@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
+    </head>
+    <style>
+        .section{
+            color: black;
+            font-size: 50px;
+            text-align: center;
+        }
+        .container {
+            display: grid;
+            align-items: center; 
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 5px;
+        }
+
+        img {
+        max-width: 100%;
+        max-height:100%;
+        }
+
+        .title {
+        font-size: 50px;
+        background-color: lightyellow;
+        }
+
+        .text {
+        font-size: 20px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        border-style: solid;
+        }
+
+        .dob {
+            display: inline; 
+            }
+
+        .num{
+        display: inline;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            margin: 0 10px;
+            opacity: 0;
+        }
+    </style>
+    <body>
+        <div class="fullpage">
+            <div class="section">
+            <div class="image">
+                <img src="Screenshot 2024-01-08 135337.png">
+              </div>
+              <div class="title" style="color: black;">
+                <h1 style="padding: 30px;">Hi, I am Bridget.</h1>
+                <div class="dob" style="padding: 30px;">Born in <div class="num">2004</div></div>
+              </div>
+              <div>
+                  <div class="text">
+                  <h1>A D3D Year 2 Republic Poly Student.</h1>
+                  -----------------------------------------------------------------
+                  <h1>An aspiring UI/UX Designer :3</h1>
+                  -----------------------------------------------------------------
+            </div>
+            </div>
+            <br>
+            <div class="section">
+            <div>
+                <div class="text">
+                    <h2>Name: Bridget</h2>
+                    <h2>Contact No.: +65 84180846</h2>
+                <div class="social-links">
+                    <a href="#" class="social-link" target="_blank">
+                        <img style="height: 200px;" src="facebook-icon-preview-1.png" alt="Facebook">
+                    </a>
+                    <a href="#" class="social-link" target="_blank">
+                        <img style="height: 200px;" src="twitter logo.jpg" alt="Twitter">
+                    </a>
+                    <!-- Add more social links as needed -->
+                </div>
+            </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
+      <script>
+         $(document).ready(function () {
+            $('#fullpage').fullpage({
+                // set options
+                sectionsColor: ['#03A9F4', '#2ECC71', '#00BCD4','#000000'],
+                navigation: true,
+                navigationPosition: 'right'
+            });
+        });
+          anime({
+              targets: '.image',
+              rotate: 360,
+              translateX: 30,
+              delay: anime.stagger(300, {start: 1000}),
+              direction: 'alternate'
+              }); 
+
+              var animation = anime({
+              targets: '.title',
+              translateY: 50,
+              delay: function(el, i) { return i * 100; },
+              direction: 'alternate',
+              loop: true,
+              easing: 'easeInOutSine'
+            });
+
+            document.querySelector('.title').onclick = animation.restart;
+
+            anime({
+            targets: '.num',
+            innerHTML: [0, 2004], //start and end values
+            easing: 'linear',
+            round: 1, //rounds off to zero decimal places 
+            duration: 2000
+            });
+
+            anime({
+                targets: '.social-link',
+                opacity: 1,
+                delay: anime.stagger(100, { start: 2000 }), // Adjust the delay as needed
+                easing: 'easeInOutQuad'
+            });
+
+
+             
+      </script>
+    </body>
+</html>

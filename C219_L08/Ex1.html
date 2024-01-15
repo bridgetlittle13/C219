@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About Me</title>
+</head>
+
+<style>
+    .container {
+ display: grid;
+ align-items: center; 
+ grid-template-columns: 1fr 1fr 1fr;
+ column-gap: 5px;
+}
+
+img {
+  max-width: 100%;
+  max-height:100%;
+}
+
+.title {
+  font-size: 50px;
+  background-color: lightyellow;
+}
+
+.text {
+  font-size: 20px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  border-style: solid;
+}
+
+/* a{
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+} */
+
+.dob {
+    display: inline; 
+    }
+
+.num{
+  display: inline;
+}    
+
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="image">
+          <img src="Screenshot 2024-01-08 135337.png">
+        </div>
+        <div class="title" style="color: black;">
+          <h1 style="padding: 30px;">Hi, I am Bridget.</h1>
+          <div class="dob" style="padding: 30px;">Born in <div class="num">2004</div></div>
+        </div>
+        <div>
+            <div class="text">
+            <h1>A D3D Year 2 Republic Poly Student.</h1>
+            -----------------------------------------------------------------
+            <h1>An aspiring UI/UX Designer. :3</h1>
+            -----------------------------------------------------------------
+      </div>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+      <script>
+          anime({
+              targets: '.image',
+              rotate: 360,
+              translateX: 30,
+              delay: anime.stagger(300, {start: 1000}),
+              direction: 'alternate'
+              }); 
+
+              var animation = anime({
+              targets: '.title',
+              translateY: 50,
+              delay: function(el, i) { return i * 100; },
+              direction: 'alternate',
+              loop: true,
+              easing: 'easeInOutSine'
+            });
+
+            document.querySelector('.title').onclick = animation.restart;
+
+            anime({
+            targets: '.num',
+            innerHTML: [0, 2004], //start and end values
+            easing: 'linear',
+            round: 1, //rounds off to zero decimal places 
+            duration: 2000
+            });
+
+             
+      </script>
+
+</body>
+</html>

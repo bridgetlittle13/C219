@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Photo Carousel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .carousel {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      flex: 0 0 auto;
+      width: 25%; /* Display 4 pictures at once */
+      box-sizing: border-box;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      background: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    #prevBtn {
+      left: 10px;
+    }
+
+    #nextBtn {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel">
+  <div class="slides">
+    <div class="slide"><img src="images/image1.jpg" alt="Slide 1"></div>
+    <div class="slide"><img src="images/image2.jpg" alt="Slide 2"></div>
+    <div class="slide"><img src="images/image3.jpg" alt="Slide 3"></div>
+    <div class="slide"><img src="images/image4.jpg" alt="Slide 4"></div>
+    <div class="slide"><img src="images/image5.jpg" alt="Slide 5"></div>
+    <!-- Add more slides as needed -->
+  </div>
+  <button id="prevBtn" onclick="prevSlide()">&#10094;</button>
+  <button id="nextBtn" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<script>
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    const slides = document.querySelector('.slides');
+    const slideWidth = document.querySelector('.slide').offsetWidth;
+    const newPosition = -index * slideWidth;
+
+    slides.style.transform = `translateX(${newPosition}px)`;
+    currentIndex = index;
+  }
+
+  function nextSlide() {
+    const totalSlides = document.querySelectorAll('.slide').length;
+    currentIndex = (currentIndex + 4) % totalSlides; // Display 4 pictures at once
+    showSlide(currentIndex);
+  }
+
+  function prevSlide() {
+    const totalSlides = document.querySelectorAll('.slide').length;
+    currentIndex = (currentIndex - 4 + totalSlides) % totalSlides; // Display 4 pictures at once
+    showSlide(currentIndex);
+  }
+
+  // Update carousel on window resize
+  window.addEventListener('resize', () => {
+    showSlide(currentIndex);
+  });
+</script>
+
+</body>
+</html>

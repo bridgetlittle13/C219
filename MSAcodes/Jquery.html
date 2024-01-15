@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jquery</title>
+
+        <!-- Include jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    </head>
+    <body>
+
+        <!-- Element to be hidden -->
+        <div id="test">This is the element to be hidden.</div>
+
+        <h2>Selectors</h2>
+
+        <script>
+            // Use jQuery to hide the class="test" when button is clicked
+            $(document).ready(function () {
+                $("button").click(function () {
+                    $(".test").hide();
+                });
+            });
+            // Use jQuery to hide the element with id "test"
+            $(document).ready(function () {
+                $("#test").hide();
+            });
+            //Use the correct selector to hide an element with id="test".
+            $(document).ready(function () {
+                $("#test").hide();
+            });
+            //Use the correct selector to hide all elements with class="test".
+            $(document).ready(function () {
+                $(".test").hide();
+            });
+            //Use the correct selector to hide all elements in the document.
+            $(document).ready(function () {
+                $("*").hide();
+            });
+            //Use the correct selector to hide all elements with an href attribute.
+            $(document).ready(function () {
+                $("[href]").hide();
+            });
+            //Use the correct selector to hide all odd table rows in a table.
+            $(document).ready(function () {
+                $("tr:odd").hide();
+            });
+        </script>
+
+        <h2>Events</h2>
+
+        <script>
+
+            <h2>Events</h2>
+
+            //Hide all <p> elements with a "click" event:
+            $(document).ready(function () {
+                $("p").click(function () {
+                    $(this).hide();
+                });
+            });
+            //Hide all <p> elements with a "double-click" event:
+            $(document).ready(function () {
+                $("p").dblclick(function () {
+                    $(this).hide();
+                });
+            });
+            //Hide a <p> element when the mouse pointer enters it:
+            $(document).ready(function () {
+            $("p").mouseenter(function () {
+            $(this).hide();
+            });
+                    //Hide an <input> element when a keyboard key is pressed:
+                    $(document).ready(function () {
+            $("input").keypress(function () {
+            $(this).hide();
+            });
+            });
+                    //Use the on() method to attach a click event handler to all <p> elements:
+                    $(document).ready(function () {
+            $("p").on("click", function () {
+            // Your click event handler logic here
+            alert("Paragraph clicked!");
+            });
+            });
+        </script>
+
+        <script>
+
+            <h2>Hide and Show</h2>
+
+                    //Use a jQuery method to hide a <p> element when it is clicked on.
+                    $(document).ready(function () {
+            $("p").on("click", function () {
+            $(this).hide();
+            });
+            });
+                    //Use a jQuery method to hide a <p> element slowly when it is clicked on.
+                    $(document).ready(function () {
+            $("p").on("click", function () {
+            $(this).hide("slow");
+            });
+            });
+                    //Use a jQuery method to show a <p> element.
+                    $(document).ready(function () {
+            $("p").show();
+            });
+                    //Use a jQuery method to toggle between hiding and showing a <p> element.
+                    $(document).ready(function () {
+            $("p").on("click", function () {
+            $(this).toggle();
+            });
+            });
+        </script>
+
+        <script>
+
+            <h2>Fade</h2>
+                    //Use a jQuery method to fade out a <div> element.
+                    $(document).ready(function () {
+            $("div").fadeOut();
+            });
+                    //Use a jQuery method to fade out a <div> element with effect of slow
+                    $(document).ready(function () {
+            $("div").fadeOut("slow");
+            });
+                    //Use a jQuery method to fade a <div> element to an opacity of "0.2".
+                    $(document).ready(function () {
+            $("div").fadeTo("slow", 0.2);
+            });
+                    //Use a jQuery method to toggle between fading in and out a <div> element with duration fo 1000 miliseconds, when clicking on a button.
+                    $(document).ready(function () {
+            $("button").click(function () {
+            $("div").fadeToggle(1000);
+            });
+            });
+        </script>
+
+        <script>
+
+                    <h2>Slide</h2>
+                    //Slide up a <div> element:
+                    $(document).ready(function () {
+            $("div").slideUp();
+            });
+                    //Slide up a <div> element slowly:
+                    $(document).ready(function () {
+            $("div").slideUp("slow");
+            });
+                    //Slide down a <div> element:
+                    $(document).ready(function () {
+            $("div").slideDown();
+            });
+                    //Toggle between sliding up and down a <div> element when clicking on a button:
+                    $(document).ready(function () {
+            $("button").on("click", function () {
+            $("div").slideToggle();
+            });
+            });
+                    //Button to trigger the slide up/down 
+            <button>Toggle Slide</button>
+
+                    //The div to be slid up/down 
+                    <div>This is the content to slide.</div>
+
+        </script>
+
+        <script>
+
+            <h2>Animate</h2>
+
+                    //Use the animate() method to move a <div> element 250 pixels to the right:
+                    $(document).ready(function () {
+            $("div").animate({left: "250px"});
+            });
+                    //Use the animate() method to set the height of a <div> element to 500 pixels:
+                    $(document).ready(function () {
+            $("div").animate({height: "500px"});
+            });
+                    //Use the animate() method to set multiple CSS properties for <div>:
+                    $(document).ready(function () {
+            $("div").animate({
+            opacity: 0.4,
+                    height: "500px",
+                    width: "500px"
+            });
+            });
+                    //Use the animate() method to set the font-size of a <div> element to 100 pixels slowly:
+                    $(document).ready(function () {
+            $("div").animate({fontSize: "100px"}, "slow");
+            });
+        </script>
+
+        <script>
+
+                    <h2>            Stop</h2>
+                    //Use a jQuery method to stop the animation effect of a <div> element:
+                    $(document).ready(function () {
+            $("div").stop();
+            })
+
+        </script>
+
+        <script>
+
+                    <h2>Get</h2>
+                    //Use a jQuery method to return the text content of a <div> element:
+                    $(document).ready(function () {
+            var textContent = $("div").text();
+                    console.log(textContent);
+            });
+                    //Use a jQuery method to return the HTML content of a <div> element:
+                    $(document).ready(function () {
+            var htmlContent = $("div").html();
+                    console.log(htmlContent);
+            });
+                    //Use a jQuery method to return the value of an input field:
+                    $(document).ready(function () {
+            var inputValue = $("input").val();
+                    console.log(inputValue);
+            });
+                    //Use a jQuery method to return the URL address of a link:
+                    $(document).ready(function () {
+            var linkUrl = $("a").attr("href");
+                    console.log(linkUrl);
+            });
+        </script>
+        
+   <script>
+
+            <h2>            Set</h2>
+               //Use a jQuery method to change the text of a <div> element to "Hello World":
+               $(document).ready(function () {
+       $("div").text("Hello World");
+       });
+               //Use a jQuery method to change the value of an input field to "John Doe":
+               $(document).ready(function () {
+       $("input").val("John Doe");
+       });
+               //Use a jQuery method to change the value of an image's src attribute to "myimage.jpg".$()
+               $(document).ready(function () {
+       $("#myImage").attr("src", "myimage.jpg");
+       });
+               //Use jQuery to change the text of a link to "Demo",
+               $(document).ready(function () {
+       $("#myLink").text("Demo");
+       });
+               //Use JQuery to change the value of href's attribute value to "www.demo.com".
+               $(document).ready(function () {
+       $("#myLink").attr("href", "www.demo.com");
+       });
+        </script>
+        
+   <script>
+
+       <h2>Add</h2>
+               // Insert "YES!" at the end of the <p> element
+               $(document).ready(function () {
+       $("#myParagraph").append(" YES!");
+       });
+               //Insert "YES!" at the beginning of the <p> element
+               $(document).ready(function () {
+       $("#myParagraph").prepend("YES! ");
+       });
+        </script>
+   
+  <script>
+
+       <h2            >Remove</h2            >
+              // Remove a <div> element:
+              $("#myDiv").remove();
+              
+              // Remove only child elements of a <div> element:
+              $("#parentDiv").empty();
+              
+              // Remove all <div> elements with class="test" and class="demo":
+              $("div.test, div.demo").remove();
+         </script>
+           
+  <script>
+
+               <h2>Classes</h2>
+
+              // Add the "important" class to the <p> element
+              $("#myParagraph").addClass("important");
+              
+              // Add both the "important" and "test" classes to the <p> element
+              $("#myParagraph").addClass("important test");
+              
+              // Remove the "important" class from the <p> element
+              $("#myParagraph").removeClass("important");
+              
+              // Toggle the "important" class on click
+              $("#myParagraph").click(function () {
+      $(this).toggleClass("important");
+      });
+               </script>
+           <script>
+
+              <h2>CSS</h2>
+                       // Add a pink background color to the <p> element
+                       $("#myParagraph").css("background-color", "pink");
+                       
+                       // Add a 5 pixels red dotted border to the <p> element
+                       $("#myParagraph").css("border", "5px dotted red");
+                       
+                       // Return the background color of the <p> element
+                       var bgColor = $("#myParagraph").css("background-color\n\");
+                       console.log("Background Color: " + bgColor);
+                       
+                       // Set styles for the <p> element
+                       $("#myParagraph").css({
+               "background-color": "green",
+                       "color": "white",
+                       "font-size": "25px",
+                       "padding": "15px"
+               });
+               </script>     
+           <script>
+
+            <h2>Dimensions</h2>
+                       // Set the height and width of the <div> element to 500 pixels
+                       $("#myDiv").height(500).width(500);
+                       
+               // Get the height of the <div> element, excluding padding, border, and margin
+               var heightWithoutPaddingBorderMargin = $("#myDiv").height();
+               console.log("Height without padding, border, and margin: " + heightWithoutPaddingBorderMargin);
+               
+               // Get the height of the <div> element, including padding (not border and margin)
+               var heightWithPadding = $("#myDiv").outerHeight(false);
+               console.log("Height with padding: " + heightWithPadding);
+               
+               // Get the height of the <div> element, including padding and border
+               var heightWithPaddingAndBorder = $("#myDiv").outerHeight(true);
+               console.log("Height with padding and border: " + heightWithPaddingAndBorder);
+               
+               // Get the height of the <div> element, including padding, border, and margin
+               var heightWithPaddingBorderMargin = $("#myDiv").outerHeight(true);
+               console.log("Height with padding, border, and margin: " + heightWithPaddingBorderMargin);
+               });
+               </script>
+      
+           <script>
+
+                       <h2>Traversing</h2>
+                       // Get the direct parent of the <span> element
+                       var parentDiv = $("#mySpan").parent();
+                       console.log("Direct Parent: ", parentDiv);
+                       
+                       // Get all ancestors of the <span> element
+                       var allAncestors = $("#mySpan").parents();
+                       console.log("All Ancestors: ", allAncestors);
+                       
+                       // Get all direct children of the <div> element
+                       var childrenOfDiv = $("#parentDiv").children();
+                       console.log("Direct Children of Div: ", childrenOfDiv);
+                       
+                       // Get all <span> elements that are descendants of <div>
+                       var spanDescendants = $("#parentDiv").find("span");
+                       console.log("Descendant Spans: ", spanDescendants);
+                       
+                       // Get all sibling elements of the <h2> element
+                       var siblingElements = $("h2").siblings();
+                       console.log("Siblings of h2: ", siblingElements);
+                       
+                       // Get the first <div> element in the document
+                       var firstDiv = $("div").first();
+                       console.log("First Div: ", firstDiv);
+               </script>
+    </body>
+</html>
