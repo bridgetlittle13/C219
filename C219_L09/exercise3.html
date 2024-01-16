@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart.js</title>
+     <!-- Add the CDN link for Chart.js here -->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        // Define chart labels
+        var labels = ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5'];
+
+
+        // Set labels, colours and data
+        var data = {
+            labels: labels,
+            datasets: [{
+                label: 'Sample Data',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)', // Background color of bars
+                borderColor: 'rgba(75, 192, 192, 1)', // Border color of bars
+                borderWidth: 1, // Border width of bars
+                data: [12, 19, 3, 5, 2], // Actual data values
+            }]
+        };
+
+
+        // Configure chart
+        var config = {
+            type: 'bar', // Type of chart (bar, line, pie, etc.)
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        // Render chart in <canvas>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, config);
+
+    </script>
+</body>
+
+</html>
