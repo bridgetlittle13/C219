@@ -1,0 +1,63 @@
+<!-- FILEPATH: /c:/Users/briwo/OneDrive/Documents/GitHub/C219/C219_L10/quizQ2.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two Balls</title>
+    <style>
+        .ball {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .blue-ball {
+            background-color: blue;
+            top: 100px;
+            left: 100px;
+        }
+
+        .red-ball {
+            background-color: red;
+            top: 200px;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ball blue-ball"></div>
+    <div class="ball red-ball"></div>
+
+    <div id="timer"></div>
+
+    <script>
+        setTimeout(function() {
+            var blueBall = document.querySelector('.blue-ball');
+            var redBall = document.querySelector('.red-ball');
+            //if you want to move the ball to the right,
+            translateX = [-500,0]
+            var blueBallRect = blueBall.getBoundingClientRect();
+            var redBallRect = redBall.getBoundingClientRect();
+
+            var collisionX = redBallRect.left - blueBallRect.width;
+            var collisionY = redBallRect.top - blueBallRect.height;
+
+            blueBall.style.transition = 'all 1s';
+            blueBall.style.transform = 'translate(' + collisionX + 'px, ' + collisionY + 'px)';
+
+            setTimeout(function() {
+                redBall.style.display = 'none';
+            }, 5000);
+        }, 2000);
+
+        var timerElement = document.getElementById('timer');
+        var seconds = 0;
+
+        setInterval(function() {
+            seconds++;
+            timerElement.textContent = 'Timer: ' + seconds + 's';
+        }, 1000);
+    </script>
+</body>
+</html>
